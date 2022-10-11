@@ -2,6 +2,7 @@
   "name": "mongodb-first",
   "version": "1.0.0",
   "main": "mongodb.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +17,8 @@
   },
   "homepage": "https://github.com/ainistaranda/mongodb-first#readme",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "mongodb": "^4.10.0"
+  }
 }

@@ -1,0 +1,28 @@
+import { MongoClient} from 'mongodb'
+
+import {uri } from "./credentials.js" 
+
+const client = new MongoClient(uri)
+//connects to database
+const db = client.db("sample_mflix")
+const moviesCollection = db.collection("movies")
+
+
+// console.log( await moviesCollection.findOne({}))
+let query = {title: { $regex: /terminator/i}} //search for "terminator" anywhere in the title & ignore case
+let movieArray = await moviesCollection.find(query).limit(3).toArray()
+
+for (let i = 0; i < movieArray.length; i++){
+    console.log(movieArray[i].title)
+}
+
+// let firstMovie = movieArray[0]
+// console.log(firstMovie.title)
+
+
+
+console.log(`there are ${movieArray.length} movies`)
+
+
+
+
